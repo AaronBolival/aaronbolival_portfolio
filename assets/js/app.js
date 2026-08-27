@@ -293,18 +293,65 @@ function extras() {
   });
 }
 function skills() {
+  const skillCategories = V(DATA.Skills).sort(
+    (a, b) =>
+      (Number(a.sortOrder) || 0) -
+      (Number(b.sortOrder) || 0),
+  );
+
   $("#skills .content").innerHTML =
     iconTitle("bi-cpu-fill", "Technical Skills") +
-    `<div class="row g-3">${V(DATA.Skills)
-      .map(
-        (g) =>
-          `<div class="col-md-6 col-xl-3"><div class="card-ui skill-box"><h5><i class="bi bi-stack accent me-2"></i>${E(g.category)}</h5>${A(
-            g.skills,
-          )
-            .map((x) => `<span class="tag">${E(x)}</span>`)
-            .join("")}</div></div>`,
-      )
-      .join("")}</div>`;
+    `
+      <div class="row g-3">
+        ${skillCategories
+          .map((category) => {
+            const iconClass =
+              String(category.icon || "").trim() ||
+              "bi-code-slash";
+
+            return `
+              <div class="col-md-6 col-xl-3">
+                <div class="card-ui skill-box">
+                  <h5 class="skill-category-title">
+                    <span class="skill-category-icon">
+                      <i class="bi ${E(iconClass)}"></i>
+                    </span>
+
+                    ${E(category.category)}
+                  </h5>
+
+                  <div class="skill-tags">
+                    ${A(category.skills)
+                      .filter(
+                        (skill) =>
+                          String(
+                            skill?.text ?? skill ?? "",
+                          ).trim() !== "",
+                      )
+                      .map((skill) => {
+                        const skillText =
+                          typeof skill === "object"
+                            ? skill.text ||
+                              skill.title ||
+                              skill.name ||
+                              ""
+                            : skill;
+
+                        return `
+                          <span class="tag">
+                            ${E(skillText)}
+                          </span>
+                        `;
+                      })
+                      .join("")}
+                  </div>
+                </div>
+              </div>
+            `;
+          })
+          .join("")}
+      </div>
+    `;
 }
 function soft() {
   let items = V(DATA.SoftSkills);

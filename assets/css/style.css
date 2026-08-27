@@ -22,3 +22,38 @@ main{min-width:0}.quick-links a{color:var(--p);text-decoration:none}.quick-links
 
 /* V6 complete detail pages */
 .detail-subtitle{font-size:1rem;font-weight:800;margin:1.2rem 0 .65rem}.detail-list{padding-left:1.2rem}.detail-list li{margin-bottom:.4rem}.project-detail-preview{height:360px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface2)}.project-detail-preview .media-thumb{height:100%}.project-detail-preview .media-thumb img{object-fit:contain;background:var(--surface)}.detail-info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.detail-info-card{padding:16px;border:1px solid var(--line);border-radius:10px;background:var(--surface2)}.detail-info-card h3{font-size:.9rem;font-weight:800}.certificate-image-frame{height:430px;border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--surface2);display:flex;align-items:center;justify-content:center}.certificate-image-frame .media-thumb{width:100%;height:100%;background:transparent}.certificate-image-frame .media-thumb img{width:100%;height:100%;object-fit:contain;background:transparent}.award-message{padding:18px;border-left:4px solid #e8a600;border-radius:8px;background:color-mix(in srgb,#e8a600 10%,var(--surface))}.award-message h3{font-size:1rem;color:#c88e00}.certificate-field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.certificate-field-grid>div{padding:14px;border:1px solid var(--line);border-radius:9px;background:var(--surface2)}.certificate-field-grid span{display:block;font-size:.72rem;color:var(--muted);margin-bottom:3px}.certificate-field-grid strong{display:block;color:var(--text)}@media(max-width:768px){.detail-info-grid,.certificate-field-grid{grid-template-columns:1fr}.project-detail-preview{height:280px}.certificate-image-frame{height:340px}}
+
+/* Maintainable skill-category icons */
+
+.skill-category-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.skill-category-icon {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  color: var(--p);
+  background: color-mix(
+    in srgb,
+    var(--p) 14%,
+    var(--surface)
+  );
+}
+
+.skill-category-icon i {
+  font-size: 1rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}

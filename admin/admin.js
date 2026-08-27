@@ -147,7 +147,48 @@ const SETTINGS_TEMPLATES = {
       description: "",
       sortOrder: 1,
       hidden: false
+    },    
+    SiteProfile: {
+      title: "",
+      description: "",
+      sortOrder: 1,
+      hidden: false
     },
+    SiteProfile: {
+      greeting: "",
+      fullName: "",
+      jobTitle: "",
+      heroDescription: "",
+
+      profileImage: "",
+      profileImageAlt: "",
+      profileImageHidden: false,
+
+      linkedinUrl: "",
+      linkedinButtonText: "LinkedIn",
+      showLinkedIn: true,
+
+      githubUrl: "",
+      githubButtonText: "GitHub",
+      showGitHub: true,
+
+      resumeUrl: "",
+      resumeButtonText: "Download CV",
+
+      connectTitle: "Let's Connect",
+      connectDescription: "",
+      contactEmail: "",
+      contactButtonText: "Contact Me",
+
+      hidden: false
+    },
+    Skills: {
+      category: "",
+      icon: "bi-code-slash",
+      skills: [""],
+      sortOrder: 1,
+      hidden: false
+    }
 
 };
 const ARRAY_ITEM_TEMPLATES = {
