@@ -150,12 +150,6 @@ const SETTINGS_TEMPLATES = {
       hidden: false
     },    
     SiteProfile: {
-      title: "",
-      description: "",
-      sortOrder: 1,
-      hidden: false
-    },
-    SiteProfile: {
       greeting: "",
       fullName: "",
       jobTitle: "",
