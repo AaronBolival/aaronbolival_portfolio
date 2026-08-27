@@ -349,19 +349,175 @@ function groups() {
   return out;
 }
 function client(c) {
-  let names = V(c.clientName).filter((x) => x.type !== "label"),
-    ach = V(c.achievements).filter((x) => x.type !== "label");
-  return `<div class="client-card"><div class="client-head"><div><b><i class="bi bi-building"></i> Client:</b> ${names.map((x) => `<span class="client-badge">${E(x.text)}</span>`).join("")}</div><b class="client-date">${range(c.startDate, c.endDate)}</b></div><div class="meta">${E(c.clientType)} • ${E(c.clientLocation)}</div><ul>${V(
-    c.clientExperience,
-  )
-    .filter((x) => x.type !== "label")
-    .map((x) => `<li>${E(x.text)}</li>`)
-    .join("")}</ul>${V(c.clientModule)
-    .filter((x) => x.type !== "label")
-    .map((x) => `<span class="tag">${E(x.text)}</span>`)
-    .join(
-      "",
-    )}${ach.length ? `<div class="achievement"><h6><i class="bi bi-trophy-fill"></i> Achievements</h6>${ach.map((x) => `<div>${E(x.text)}${x.proofHidden !== true && x.proofUrl ? `<br><a href="${E(x.proofUrl)}"><i class="bi bi-award-fill"></i> Proof of Achievement</a>` : ""}</div>`).join("")}</div>` : ""}</div>`;
+  const names = V(c.clientName)
+    .filter((item) => item.type !== "label")
+    .filter((item) => String(item.text || "").trim() !== "");
+
+  const responsibilities = V(c.clientExperience)
+    .filter((item) => item.type !== "label")
+    .filter((item) => String(item.text || "").trim() !== "");
+
+  const modules = V(c.clientModule)
+    .filter((item) => item.type !== "label")
+    .filter((item) => String(item.text || "").trim() !== "");
+
+  const achievements = V(c.achievements)
+    .filter((item) => item.type !== "label")
+    .filter((item) => String(item.text || "").trim() !== "");
+
+  const hasClientType =
+    String(c.clientType || "").trim() !== "";
+
+  const hasClientLocation =
+    String(c.clientLocation || "").trim() !== "";
+
+  const hasStartDate =
+    String(c.startDate || "").trim() !== "";
+
+  const hasEndDate =
+    String(c.endDate || "").trim() !== "";
+
+  const hasClientContent =
+    names.length > 0 ||
+    responsibilities.length > 0 ||
+    modules.length > 0 ||
+    achievements.length > 0 ||
+    hasClientType ||
+    hasClientLocation ||
+    hasStartDate ||
+    hasEndDate;
+
+  // Hide the complete client block when every field is empty.
+  if (!hasClientContent) {
+    return "";
+  }
+
+  const clientNameHtml =
+    names.length > 0
+      ? `
+        <div>
+          <b>
+            <i class="bi bi-building"></i>
+            Client:
+          </b>
+
+          ${names
+            .map(
+              (item) => `
+                <span class="client-badge">
+                  ${E(item.text)}
+                </span>
+              `,
+            )
+            .join("")}
+        </div>
+      `
+      : "";
+
+  const clientDateHtml =
+    hasStartDate || hasEndDate
+      ? `
+        <b class="client-date">
+          ${range(c.startDate, c.endDate)}
+        </b>
+      `
+      : "";
+
+  const metadata = [
+    c.clientType,
+    c.clientLocation
+  ]
+    .map((item) => String(item || "").trim())
+    .filter(Boolean)
+    .join(" • ");
+
+  const metadataHtml = metadata
+    ? `<div class="meta">${E(metadata)}</div>`
+    : "";
+
+  const responsibilitiesHtml =
+    responsibilities.length > 0
+      ? `
+        <ul>
+          ${responsibilities
+            .map(
+              (item) => `
+                <li>${E(item.text)}</li>
+              `,
+            )
+            .join("")}
+        </ul>
+      `
+      : "";
+
+  const modulesHtml = modules
+    .map(
+      (item) => `
+        <span class="tag">
+          ${E(item.text)}
+        </span>
+      `,
+    )
+    .join("");
+
+  const achievementsHtml =
+    achievements.length > 0
+      ? `
+        <div class="achievement">
+          <h6>
+            <i class="bi bi-trophy-fill"></i>
+            Achievements
+          </h6>
+
+          ${achievements
+            .map(
+              (item) => `
+                <div>
+                  ${E(item.text)}
+
+                  ${
+                    item.proofHidden !== true &&
+                    String(item.proofUrl || "").trim() !== ""
+                      ? `
+                        <br>
+                          <a
+                            target="_blank"
+                            href="${E(item.proofUrl)}"
+                            rel="noopener noreferrer"
+                          >
+                            <i class="bi bi-award-fill"></i>
+                            Proof of Achievement
+                          </a>
+                      `
+                      : ""
+                  }
+                </div>
+              `,
+            )
+            .join("")}
+        </div>
+      `
+      : "";
+
+  return `
+    <div class="client-card">
+      ${
+        clientNameHtml || clientDateHtml
+          ? `
+            <div class="client-head">
+              ${clientNameHtml}
+              ${clientDateHtml}
+            </div>
+          `
+          : ""
+      }
+
+      ${metadataHtml}
+      ${responsibilitiesHtml}
+      ${modulesHtml}
+      ${achievementsHtml}
+    </div>
+  `;
 }
 function experience() {
   $("#experience .content").innerHTML =

@@ -117,9 +117,81 @@ const SETTINGS_TEMPLATES = {
     ],
     sortOrder: 1,
     hidden: false
+    },
+    Education: {
+        school: "",
+        degree: "",
+        fieldOfStudy: "",
+        startDate: "",
+        endDate: "",
+        location: "",
+        description: "",
+        sortOrder: 1,
+        hidden: false
     }
 
 };
+const ARRAY_ITEM_TEMPLATES = {
+  clientName: {
+    text: "",
+    hidden: false
+  },
+
+  clientExperience: {
+    text: "",
+    hidden: false
+  },
+
+  clientModule: {
+    text: "",
+    hidden: false
+  },
+
+  achievements: {
+    text: "",
+    proofUrl: "",
+    proofHidden: false,
+    hidden: false
+  },
+
+  clientDetails: {
+    clientName: [
+      {
+        text: "",
+        hidden: false
+      }
+    ],
+    clientType: "",
+    clientLocation: "",
+    startDate: "",
+    endDate: "",
+    clientExperience: [
+      {
+        text: "",
+        hidden: false
+      }
+    ],
+    clientModule: [
+      {
+        text: "",
+        hidden: false
+      }
+    ],
+    achievements: [
+      {
+        text: "",
+        proofUrl: "",
+        proofHidden: false,
+        hidden: false
+      }
+    ],
+    hidden: false
+  }
+};
+function getArrayPropertyName(path) {
+  return path[path.length - 1];
+}
+
 let current = C[0],
   key = "",
   value = {};
@@ -236,20 +308,30 @@ function render() {
       .join("") || "<p>Add fields using the collection template.</p>";
 document.querySelectorAll(".add-array").forEach((button) => {
   button.onclick = () => {
-    // Preserve all currently entered values before rebuilding the form.
+    // Preserve fields already populated before rebuilding the form.
     collect();
 
     const arrayPath = button.dataset.path.split(".");
     const targetArray = getPath(value, arrayPath);
+    const propertyName = getArrayPropertyName(arrayPath);
 
-    let newItem = "";
+    let newItem;
 
-    if (
+    // Use a permanent template even when the array is empty.
+    if (ARRAY_ITEM_TEMPLATES[propertyName]) {
+      newItem = structuredClone(
+        ARRAY_ITEM_TEMPLATES[propertyName]
+      );
+    } else if (
       targetArray.length > 0 &&
       targetArray[0] &&
       typeof targetArray[0] === "object"
     ) {
-      newItem = blank(structuredClone(targetArray[0]));
+      newItem = blank(
+        structuredClone(targetArray[0])
+      );
+    } else {
+      newItem = "";
     }
 
     targetArray.push(newItem);
@@ -260,18 +342,25 @@ document.querySelectorAll(".add-array").forEach((button) => {
 
 document.querySelectorAll(".remove-array").forEach((button) => {
   button.onclick = () => {
-    // Preserve all currently entered values before rebuilding the form.
+    // Preserve unsaved values in the other fields.
     collect();
 
     const arrayPath = button.dataset.path.split(".");
     const targetArray = getPath(value, arrayPath);
     const itemIndex = Number(button.dataset.i);
 
-    targetArray.splice(itemIndex, 1);
+    if (
+      Number.isInteger(itemIndex) &&
+      itemIndex >= 0 &&
+      itemIndex < targetArray.length
+    ) {
+      targetArray.splice(itemIndex, 1);
+    }
 
     render();
   };
 });
+
 }
 function getPath(o, p) {
   return p.reduce((a, k) => a[k], o);
