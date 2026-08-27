@@ -354,10 +354,40 @@ function skills() {
     `;
 }
 function soft() {
-  let items = V(DATA.SoftSkills);
+  const items = V(DATA.SoftSkills).sort(
+    (a, b) =>
+      (Number.isFinite(Number(a.sortOrder))
+        ? Number(a.sortOrder)
+        : 999) -
+      (Number.isFinite(Number(b.sortOrder))
+        ? Number(b.sortOrder)
+        : 999),
+  );
   $("#soft .content").innerHTML =
     iconTitle("bi-people-fill", "Soft Skills") +
-    `<div class="row g-3">${items.map((s, i) => `<div class="col-lg-4 col-md-6"><article class="soft-title-card card-ui" tabindex="0" role="button" data-soft="${i}"><h3>${E(s.title || (A(s.itemDetails)[0] || {}).title)}</h3><i class="bi bi-arrow-up-right-circle"></i></article></div>`).join("")}</div>`;
+    `<div class="row g-3">${items.map((s, i) => `
+      <div class="col-lg-4 col-md-6">
+        <article class="soft-title-card card-ui" tabindex="0" role="button" data-soft="${i}">
+          <div class="soft-skill-header">
+            ${
+              s.iconHidden !== true
+                ? `
+                  <span class="soft-skill-icon">
+                    <i class="bi ${E(s.icon || "bi-people-fill")}"></i>
+                  </span>
+                `
+                : ""
+            }
+
+            <h3>
+              ${E(s.title || (A(s.itemDetails)[0] || {}).title)}
+            </h3>
+          </div>
+
+          <i class="bi bi-arrow-up-right-circle"></i>
+        </article>
+      </div>`).join("")}
+    </div>`;
   document.querySelectorAll("[data-soft]").forEach((b) => {
     let open = () => {
       let s = items[+b.dataset.soft],

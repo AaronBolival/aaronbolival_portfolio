@@ -188,8 +188,21 @@ const SETTINGS_TEMPLATES = {
       skills: [""],
       sortOrder: 1,
       hidden: false
+    },
+    SoftSkills: {
+      title: "",
+      icon: "bi-people-fill",
+      iconHidden: false,
+      description: "",
+      examples: [
+        {
+          text: "",
+          hidden: false
+        }
+      ],
+      sortOrder: 1,
+      hidden: false
     }
-
 };
 const ARRAY_ITEM_TEMPLATES = {
   clientName: {

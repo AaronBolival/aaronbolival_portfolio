@@ -57,3 +57,24 @@ main{min-width:0}.quick-links a{color:var(--p);text-decoration:none}.quick-links
   flex-wrap: wrap;
   gap: 3px;
 }
+
+.soft-skill-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.soft-skill-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--p);
+  background: rgba(111, 88, 255, 0.12);
+}
+
+.soft-skill-icon i {
+  font-size: 1rem;
+}
