@@ -54,6 +54,7 @@ const SETTINGS_TEMPLATES = {
     issuer: "",
     latest: false,
     verifyLink: "",
+    sortOrder: 1,
   },
   SectionSettings: {
     sectionId: "",

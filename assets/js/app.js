@@ -615,7 +615,12 @@ function cards() {
     .slice(0, 3);
 
   const featuredCertificates = allCertificates
-    .filter((certificate) => certificate.featured !== false)
+    .filter(certificate => certificate.featured !== false)
+    .sort(
+      (a, b) =>
+        (Number(a.sortOrder) || 999) -
+        (Number(b.sortOrder) || 999),
+    )
     .slice(0, 3);
 
   const projectsContainer = $("#projects .content");
@@ -707,7 +712,11 @@ function connect() {
     `<div class="card-ui p-5 text-center">${iconTitle("bi-send-fill", p.connectTitle || "Let's Connect")}<p>${E(p.connectDescription)}</p><a class="btn btn-primary" href="mailto:${E(p.contactEmail)}"><i class="bi bi-envelope-fill"></i> ${E(p.contactButtonText || "Contact Me")}</a></div>`;
 }
 function list(type) {
-  const all = V(DATA[type]);
+  const all = V(DATA[type]).sort(
+    (a, b) =>
+      (Number(a.sortOrder) || 999) -
+      (Number(b.sortOrder) || 999),
+  );
   const q = $("#search");
   const cat = $("#category");
   const grid = $("#grid");
@@ -849,6 +858,13 @@ function detail(type) {
       '<div class="alert alert-warning">Record not found.</div>';
     return;
   }
+
+  const toolbar = $("#toolbar");
+
+  if (toolbar) {
+    toolbar.style.display = "none";
+  }
+
   let gallery = V(x.images || x.gallery),
     videos = V(x.youtubeVideos || x.youtube || x.videos),
     features = A(x.features),
@@ -856,7 +872,12 @@ function detail(type) {
     tools = x.tools,
     technologies = x.technologies;
   $("#detail").innerHTML =
-    `<a class="back-link" href="${p ? "projects" : "certificates"}.html"><i class="bi bi-arrow-left"></i> Back</a>${iconTitle(p ? "bi-folder-fill" : "bi-patch-check-fill", x.title)}${
+    `<a class="back-link" href="${p ? "projects" : "certificates"}.html">
+        <i class="bi bi-arrow-left"></i>
+        ${p ? "All Projects" : "All Certificates"}
+    </a>
+        
+        ${iconTitle(p ? "bi-folder-fill" : "bi-patch-check-fill", x.title)}${
       p
         ? `
  <article class="card-ui detail-panel project-detail-card">
@@ -890,7 +911,6 @@ function detail(type) {
      <div><span>Expiration</span><strong>${E(detailValue(x.expiration, "No expiration"))}</strong></div>
      <div><span>Featured</span><strong>${E(detailValue(x.featured))}</strong></div>
      <div><span>Latest</span><strong>${E(detailValue(x.latest))}</strong></div>
-     <div><span>Hidden</span><strong>${E(detailValue(x.hidden))}</strong></div>
     </div>
     ${x.verifyLink ? `<a class="btn btn-primary mt-4" href="${E(x.verifyLink)}" target="_blank" rel="noopener"><i class="bi bi-patch-check"></i> Verify Certificate</a>` : ""}
    </div>
