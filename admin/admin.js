@@ -128,7 +128,26 @@ const SETTINGS_TEMPLATES = {
         description: "",
         sortOrder: 1,
         hidden: false
-    }
+    },
+    AboutMe: {
+      title: "",
+      description: [""],
+      sortOrder: 1,
+      hidden: false
+    },
+
+    Goals: {
+      title: "",
+      description: "",
+      sortOrder: 1,
+      hidden: false
+    },
+    Objectives: {
+      title: "",
+      description: "",
+      sortOrder: 1,
+      hidden: false
+    },
 
 };
 const ARRAY_ITEM_TEMPLATES = {
