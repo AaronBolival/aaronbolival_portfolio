@@ -1,0 +1,378 @@
+{
+  "SiteProfile": {
+    "main": {
+      "greeting": "Hello, I'm",
+      "fullName": "Aaron John Bolival",
+      "jobTitle": "SAP Developer",
+      "heroDescription": "I build reliable SAP solutions using ABAP, RAP, SAPUI5, OData, and SAP BTP.",
+      "initials": "AJ",
+      "linkedinUrl": "https://linkedin.com",
+      "githubUrl": "https://github.com/aaronbolival",
+      "contactEmail": "aaron@example.com"
+    }
+  },
+  "AboutMe": {
+    "main": {
+      "title": "About Me",
+      "description": [
+        "I am an SAP Developer specializing in ABAP. I also have basic skills in RAP, CAP and SAPUI5 development.",
+        "I enjoy building practical business applications and solving technical challenges."
+      ]
+    }
+  },
+  "WhatIDo": {
+    "a": {
+      "title": "SAP Development (ABAP)"
+    },
+    "b": {
+      "title": "SAP Fiori & UI5 Development"
+    },
+    "c": {
+      "title": "Issue Analysis & Support"
+    },
+    "d": {
+      "title": "Process Optimization"
+    },
+    "e": {
+      "title": "Technical Documentation"
+    }
+  },
+  "Goals": {
+    "g1": {
+      "title": "Continuous Growth",
+      "description": "Develop dependable SAP solutions while continuously expanding technical expertise",
+      "hidden": false
+    }
+  },
+  "Objectives": {
+    "o1": {
+      "title": "Deliver Business Value",
+      "description": "Create maintainable solutions that improve efficiency and user experience",
+      "hidden": false
+    }
+  },
+  "Education": {
+    "e1": {
+      "school": "AMA School Fairview",
+      "degree": "Bachelor of Science in Information Technology",
+      "startDate": "2015-06-01",
+      "endDate": "2019-04-01",
+      "location": "Quezon City",
+      "hidden": false
+    }
+  },
+  "Skills": {
+    "sap": {
+      "category": "SAP",
+      "skills": [
+        "ABAP",
+        "RAP",
+        "CDS",
+        "OData",
+        "SAPUI5",
+        "CAP",
+        "BTP"
+      ]
+    },
+    "ms": {
+      "category": "Microsoft",
+      "skills": [
+        "Power BI",
+        "Power Apps",
+        "Power Automate"
+      ]
+    },
+    "web": {
+      "category": "Web Development",
+      "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Bootstrap"
+      ]
+    },
+    "db": {
+      "category": "Database",
+      "skills": [
+        "Firebase",
+        "SQL"
+      ]
+    }
+  },
+  "SoftSkills": {
+    "s1": {
+      "title": "Proactive",
+      "description": "Anticipates needs and acts before issues become blockers.",
+      "buttonHidden": false,
+      "examples": [
+        {
+          "text": "Identifies risks early and proposes solutions.",
+          "hidden": false
+        }
+      ]
+    },
+    "s2": {
+      "title": "Collaborative",
+      "description": "Works effectively with technical and business teams.",
+      "buttonHidden": false,
+      "examples": [
+        {
+          "text": "Coordinates with functional consultants and testers.",
+          "hidden": false
+        }
+      ]
+    },
+    "s3": {
+      "title": "Problem Solver",
+      "description": "Analyzes issues systematically and delivers practical fixes.",
+      "buttonHidden": false,
+      "examples": [
+        {
+          "text": "Performs root cause analysis for production incidents.",
+          "hidden": false
+        }
+      ]
+    }
+  },
+  "Experiences": {
+    "x1": {
+      "company": "DXC Technology",
+      "startDate": "2021-11-01",
+      "endDate": "",
+      "jobTitle": "SAP ABAP Developer",
+      "employmentType": "Full-time",
+      "officeLocation": "Taguig / Eton Centris",
+      "tech": "SAP",
+      "clientDetails": [
+        {
+          "clientName": [
+            {
+              "text": "EEC Energy Group Inc.",
+              "hidden": false
+            }
+          ],
+          "clientType": "AM Support",
+          "clientLocation": "Asia",
+          "startDate": "2024-05-01",
+          "endDate": "",
+          "clientExperience": [
+            {
+              "text": "Developed and maintained reports, interfaces, forms, and OData services.",
+              "hidden": false
+            }
+          ],
+          "clientModule": [
+            {
+              "text": "ABAP",
+              "hidden": false
+            },
+            {
+              "text": "RAP",
+              "hidden": false
+            }
+          ],
+          "achievements": [
+            {
+              "text": "Service recognition",
+              "proofUrl": "#",
+              "proofHidden": false,
+              "hidden": false
+            }
+          ]
+        }
+      ],
+      "hidden": false
+    }
+  },
+  "Projects": {
+    "p1": {
+      "title": "SAP Leave Management System",
+      "description": "A SAP Fiori application for employee leave requests.",
+      "featured": true,
+      "hidden": false,
+      "features": [
+        "Request workflow",
+        "Status tracking"
+      ],
+      "descriptionLink": "#",
+      "githubRepositories": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/aaronbolival"
+        }
+      ],
+      "previewImage": "",
+      "images": [],
+      "youtube": [],
+      "platform": [
+        "SAP BTP"
+      ],
+      "tools": [
+        "BAS"
+      ],
+      "technologies": [
+        "SAPUI5",
+        "OData"
+      ]
+    },
+    "p2": {
+      "title": "Material Approval Workflow",
+      "description": "Custom material approval workflow.",
+      "featured": true,
+      "hidden": false,
+      "technologies": [
+        "ABAP",
+        "RAP"
+      ]
+    },
+    "p3": {
+      "title": "Portfolio Website",
+      "description": "Firebase-powered portfolio.",
+      "featured": true,
+      "hidden": false,
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    }
+  },
+  "Certificates": {
+    "c1": {
+      "title": "SAP Back-End Developer - ABAP Cloud",
+      "awardMessage": "SAP certification achievement.",
+      "certType": "SAP",
+      "expiration": "",
+      "featured": true,
+      "hidden": false,
+      "imgLink": "",
+      "issued": "2025-01-01",
+      "issuer": "SAP",
+      "latest": true,
+      "verifyLink": "#"
+    },
+    "c2": {
+      "title": "SAP Fiori Application Developer",
+      "awardMessage": "SAP certification achievement.",
+      "certType": "SAP",
+      "featured": true,
+      "hidden": false,
+      "issued": "2024-06-01",
+      "issuer": "SAP",
+      "latest": false,
+      "verifyLink": "#"
+    },
+    "c3": {
+      "title": "SAP Build Developer",
+      "awardMessage": "SAP certification achievement.",
+      "certType": "SAP",
+      "featured": true,
+      "hidden": false,
+      "issued": "2024-02-01",
+      "issuer": "SAP",
+      "latest": false,
+      "verifyLink": "#"
+    }
+  },
+  "Navigation": {
+    "home": {
+      "section": "hero",
+      "navbarText": "Home",
+      "href": "index.html#hero",
+      "showInNavbar": true,
+      "showInQuickLinks": false,
+      "sortOrder": 1
+    },
+    "about": {
+      "section": "about",
+      "navbarText": "About",
+      "href": "index.html#about",
+      "showInNavbar": true,
+      "showInQuickLinks": true,
+      "sortOrder": 2
+    },
+    "skills": {
+      "section": "skills",
+      "navbarText": "Skills",
+      "href": "index.html#skills",
+      "showInNavbar": true,
+      "showInQuickLinks": true,
+      "sortOrder": 3
+    },
+    "experience": {
+      "section": "experience",
+      "navbarText": "Experience",
+      "href": "index.html#experience",
+      "showInNavbar": true,
+      "showInQuickLinks": true,
+      "sortOrder": 4
+    }
+  },
+  "SectionSettings": {
+    "hero": {
+      "title": "Site Profile",
+      "hidden": false,
+      "sortOrder": 1
+    },
+    "statistics": {
+      "title": "Statistics",
+      "hidden": false,
+      "sortOrder": 2
+    },
+    "about": {
+      "title": "About Me",
+      "hidden": false,
+      "sortOrder": 3
+    },
+    "goal": {
+      "title": "Goal",
+      "hidden": false,
+      "sortOrder": 4
+    },
+    "objective": {
+      "title": "Objective",
+      "hidden": false,
+      "sortOrder": 5
+    },
+    "education": {
+      "title": "Education",
+      "hidden": false,
+      "sortOrder": 6
+    },
+    "skills": {
+      "title": "Technical Skills",
+      "hidden": false,
+      "sortOrder": 7
+    },
+    "soft": {
+      "title": "Soft Skills",
+      "hidden": false,
+      "sortOrder": 8
+    },
+    "experience": {
+      "title": "Experiences",
+      "hidden": false,
+      "sortOrder": 9
+    },
+    "projects": {
+      "title": "Featured Projects",
+      "hidden": false,
+      "sortOrder": 10
+    },
+    "certificates": {
+      "title": "Certificates",
+      "hidden": false,
+      "sortOrder": 11
+    },
+    "contact": {
+      "title": "Let's Connect",
+      "hidden": false,
+      "sortOrder": 12
+    }
+  },
+  "StatisticsSettings": {
+    "main": {
+      "technologyFocus": "SAP"
+    }
+  }
+}
