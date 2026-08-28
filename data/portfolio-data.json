@@ -1,378 +1,945 @@
 {
-  "SiteProfile": {
-    "main": {
-      "greeting": "Hello, I'm",
-      "fullName": "Aaron John Bolival",
-      "jobTitle": "SAP Developer",
-      "heroDescription": "I build reliable SAP solutions using ABAP, RAP, SAPUI5, OData, and SAP BTP.",
-      "initials": "AJ",
-      "linkedinUrl": "https://linkedin.com",
-      "githubUrl": "https://github.com/aaronbolival",
-      "contactEmail": "aaron@example.com"
-    }
-  },
   "AboutMe": {
-    "main": {
-      "title": "About Me",
+    "-P03rFWn_6nFoTRVYXdK": {
       "description": [
-        "I am an SAP Developer specializing in ABAP. I also have basic skills in RAP, CAP and SAPUI5 development.",
-        "I enjoy building practical business applications and solving technical challenges."
-      ]
+        "This is anonymized sample content for a software developer portfolio.",
+        "The sample professional builds maintainable business applications and supports technical solutions.",
+        "They continue learning new tools, frameworks, and development practices for professional growth."
+      ],
+      "hidden": false,
+      "sortOrder": 1,
+      "title": "About the Sample Professional"
     }
   },
-  "WhatIDo": {
-    "a": {
-      "title": "SAP Development (ABAP)"
+  "Certificates": {
+    "-P04CG_3BgXAoQLi7GqJ": {
+      "awardMessage": "",
+      "certType": "Sample Professional Credential",
+      "expiration": "",
+      "featured": true,
+      "hidden": false,
+      "imgLink": "https://example.com/certificate-image",
+      "issued": "",
+      "issuer": "Certification Provider 1",
+      "latest": true,
+      "sortOrder": 1,
+      "title": "Professional Certificate 01",
+      "verifyLink": "https://example.com/certificate-verification"
     },
-    "b": {
-      "title": "SAP Fiori & UI5 Development"
+    "-P04Ci947bGq6d9xg4Xe": {
+      "awardMessage": "",
+      "certType": "Sample Professional Credential",
+      "expiration": "",
+      "featured": true,
+      "hidden": false,
+      "imgLink": "https://example.com/certificate-image",
+      "issued": "",
+      "issuer": "Certification Provider 2",
+      "latest": true,
+      "sortOrder": 2,
+      "title": "Professional Certificate 02",
+      "verifyLink": "https://example.com/certificate-verification"
     },
-    "c": {
-      "title": "Issue Analysis & Support"
+    "-P04CryTozUhY7Rrh_6U": {
+      "awardMessage": "",
+      "certType": "Sample Professional Credential",
+      "expiration": "",
+      "featured": true,
+      "hidden": false,
+      "imgLink": "https://example.com/certificate-image",
+      "issued": "",
+      "issuer": "Certification Provider 3",
+      "latest": true,
+      "sortOrder": 3,
+      "title": "Professional Certificate 03",
+      "verifyLink": "https://example.com/certificate-verification"
     },
-    "d": {
-      "title": "Process Optimization"
+    "-P04D3gx4F1MgGFHzfbW": {
+      "awardMessage": "",
+      "certType": "Sample Professional Credential",
+      "expiration": "",
+      "featured": false,
+      "hidden": false,
+      "imgLink": "https://example.com/certificate-image",
+      "issued": "",
+      "issuer": "Certification Provider 1",
+      "latest": false,
+      "sortOrder": 4,
+      "title": "Professional Certificate 04",
+      "verifyLink": "https://example.com/certificate-verification"
     },
-    "e": {
-      "title": "Technical Documentation"
+    "-P04DDW-3wYTCGL-f4U4": {
+      "awardMessage": "",
+      "certType": "Sample Professional Credential",
+      "expiration": "",
+      "featured": false,
+      "hidden": false,
+      "imgLink": "https://example.com/certificate-image",
+      "issued": "",
+      "issuer": "Certification Provider 2",
+      "latest": false,
+      "sortOrder": 5,
+      "title": "Professional Certificate 05",
+      "verifyLink": "https://example.com/certificate-verification"
+    },
+    "-P04DO5pwnXHdhMxlNWA": {
+      "awardMessage": "",
+      "certType": "Sample Professional Credential",
+      "expiration": "",
+      "featured": false,
+      "hidden": false,
+      "imgLink": "https://example.com/certificate-image",
+      "issued": "",
+      "issuer": "Certification Provider 3",
+      "latest": false,
+      "sortOrder": 6,
+      "title": "Professional Certificate 06",
+      "verifyLink": "https://example.com/certificate-verification"
+    },
+    "-P04DXJHjY8MO6epdmzn": {
+      "awardMessage": "",
+      "certType": "Sample Professional Credential",
+      "expiration": "",
+      "featured": false,
+      "hidden": false,
+      "imgLink": "https://example.com/certificate-image",
+      "issued": "",
+      "issuer": "Certification Provider 1",
+      "latest": false,
+      "sortOrder": 7,
+      "title": "Professional Certificate 07",
+      "verifyLink": "https://example.com/certificate-verification"
+    },
+    "-P04DikjsmJg6TLbHv72": {
+      "awardMessage": "",
+      "certType": "Sample Professional Credential",
+      "expiration": "",
+      "featured": false,
+      "hidden": false,
+      "imgLink": "https://example.com/certificate-image",
+      "issued": "2019-10-23",
+      "issuer": "Certification Provider 2",
+      "latest": false,
+      "sortOrder": 8,
+      "title": "Professional Certificate 08",
+      "verifyLink": "https://example.com/certificate-verification"
+    },
+    "-P04DsdRJFXlqTKpFbmO": {
+      "awardMessage": "",
+      "certType": "Sample Professional Credential",
+      "expiration": "",
+      "featured": false,
+      "hidden": false,
+      "imgLink": "https://example.com/certificate-image",
+      "issued": "2019-10-23",
+      "issuer": "Certification Provider 3",
+      "latest": false,
+      "sortOrder": 9,
+      "title": "Professional Certificate 09",
+      "verifyLink": "https://example.com/certificate-verification"
+    },
+    "-P04E4dr77pRE6SAfi8l": {
+      "awardMessage": "Sample recognition message for professional contribution 10.",
+      "certType": "Sample Recognition Award",
+      "expiration": "",
+      "featured": false,
+      "hidden": false,
+      "imgLink": "https://example.com/certificate-image",
+      "issued": "2023-03-28",
+      "issuer": "Certification Provider 1",
+      "latest": false,
+      "sortOrder": 10,
+      "title": "Professional Certificate 10",
+      "verifyLink": "https://example.com/certificate-verification"
+    }
+  },
+  "Education": {
+    "-P006VaT7yXmKlSAfiQ-": {
+      "degree": "Bachelor of Science in Information Technology",
+      "description": "Sample education record for demonstration purposes.",
+      "endDate": "2019-05-29",
+      "fieldOfStudy": "Information Technology",
+      "hidden": false,
+      "location": "City 1",
+      "school": "Sample University 1",
+      "sortOrder": 1,
+      "startDate": "2015-06-01"
+    }
+  },
+  "Experiences": {
+    "-P0-v5p-YXUfJonddeN6": {
+      "clientDetails": [
+        {
+          "clientExperience": [
+            {
+              "hidden": false,
+              "text": "Sample responsibility 1 for engagement 1-1."
+            },
+            {
+              "hidden": false,
+              "text": "Sample responsibility 2 for engagement 1-1."
+            },
+            {
+              "hidden": false,
+              "text": "Sample responsibility 3 for engagement 1-1."
+            },
+            {
+              "hidden": false,
+              "text": "Sample responsibility 4 for engagement 1-1."
+            },
+            {
+              "hidden": false,
+              "text": "Sample responsibility 5 for engagement 1-1."
+            },
+            {
+              "hidden": false,
+              "text": "Sample responsibility 6 for engagement 1-1."
+            }
+          ],
+          "clientLocation": "Region 1",
+          "clientModule": [
+            {
+              "hidden": false,
+              "text": ""
+            }
+          ],
+          "clientName": [
+            {
+              "hidden": false,
+              "text": "Client 1-1"
+            }
+          ],
+          "clientType": "Sample Project Engagement",
+          "endDate": "",
+          "hidden": false,
+          "startDate": "2024-05-02"
+        }
+      ],
+      "company": "Company A",
+      "employmentType": "Regular",
+      "endDate": "",
+      "hidden": false,
+      "jobTitle": "Sample Technology Role 1",
+      "officeLocation": "Office Location 1",
+      "sortOrder": 1,
+      "startDate": "2021-11-08",
+      "tech": "SAP",
+      "techEndDate": "",
+      "techStartDate": "2024-05-02"
+    },
+    "-P0-yVaDNLNb8S03tE_z": {
+      "clientDetails": [
+        {
+          "clientExperience": [
+            {
+              "hidden": false,
+              "text": "Sample responsibility 1 for engagement 2-1."
+            },
+            {
+              "hidden": false,
+              "text": "Sample responsibility 2 for engagement 2-1."
+            },
+            {
+              "hidden": false,
+              "text": "Sample responsibility 3 for engagement 2-1."
+            },
+            {
+              "hidden": false,
+              "text": "Sample responsibility 4 for engagement 2-1."
+            },
+            {
+              "hidden": false,
+              "text": "Sample responsibility 5 for engagement 2-1."
+            },
+            {
+              "hidden": false,
+              "text": "Sample responsibility 6 for engagement 2-1."
+            }
+          ],
+          "clientLocation": "Region 1",
+          "clientName": [
+            {
+              "hidden": false,
+              "text": "Client 2-1"
+            },
+            {
+              "hidden": false,
+              "text": "Client 2-2"
+            }
+          ],
+          "clientType": "Sample Project Engagement",
+          "endDate": "2024-03-31",
+          "hidden": false,
+          "startDate": "2022-11-17"
+        }
+      ],
+      "company": "Company B",
+      "employmentType": "Regular",
+      "endDate": "",
+      "hidden": false,
+      "jobTitle": "Sample Technology Role 2",
+      "officeLocation": "Office Location 2",
+      "sortOrder": 1,
+      "startDate": "2021-11-08",
+      "tech": "SAP",
+      "techEndDate": "2024-03-31",
+      "techStartDate": "2022-11-17"
+    },
+    "-P0-zCJvLI9x2Q4JeBjY": {
+      "clientDetails": [
+        {
+          "clientExperience": [
+            {
+              "hidden": false,
+              "text": "Sample responsibility 1 for engagement 3-1."
+            },
+            {
+              "hidden": false,
+              "text": "Sample responsibility 2 for engagement 3-1."
+            },
+            {
+              "hidden": false,
+              "text": "Sample responsibility 3 for engagement 3-1."
+            }
+          ],
+          "clientLocation": "Region 1",
+          "clientName": [
+            {
+              "hidden": false,
+              "text": "Client 3-1"
+            }
+          ],
+          "clientType": "Sample Project Engagement",
+          "endDate": "2022-09-30",
+          "hidden": false,
+          "startDate": "2022-07-08"
+        }
+      ],
+      "company": "Company C",
+      "employmentType": "Regular",
+      "endDate": "",
+      "hidden": false,
+      "jobTitle": "Sample Technology Role 3",
+      "officeLocation": "Office Location 3",
+      "sortOrder": 1,
+      "startDate": "2021-11-08",
+      "tech": "SAP",
+      "techEndDate": "2022-09-30",
+      "techStartDate": "2022-07-08"
+    },
+    "-P00-4yvkB6M-ya5X4B3": {
+      "clientDetails": [
+        {
+          "achievements": [
+            {
+              "hidden": false,
+              "proofHidden": false,
+              "proofUrl": "https://example.com/achievement-proof",
+              "text": "Sample achievement 1 for engagement 4-1."
+            }
+          ],
+          "clientExperience": [
+            {
+              "hidden": false,
+              "text": "Sample responsibility 1 for engagement 4-1."
+            },
+            {
+              "hidden": false,
+              "text": "Sample responsibility 2 for engagement 4-1."
+            }
+          ],
+          "clientLocation": "Region 1",
+          "clientName": [
+            {
+              "hidden": false,
+              "text": "Client 4-1"
+            }
+          ],
+          "clientType": "Sample Project Engagement",
+          "endDate": "2022-08-05",
+          "hidden": false,
+          "startDate": "2022-06-07"
+        }
+      ],
+      "company": "Company D",
+      "employmentType": "Regular",
+      "endDate": "",
+      "hidden": false,
+      "jobTitle": "Sample Technology Role 4",
+      "officeLocation": "Office Location 4",
+      "sortOrder": 1,
+      "startDate": "2021-11-08",
+      "tech": "Microsoft Power Platform",
+      "techEndDate": "2022-08-05",
+      "techStartDate": "2022-06-07"
+    },
+    "-P000KC5pOv3WUZifZsg": {
+      "clientDetails": [
+        {
+          "achievements": [
+            {
+              "hidden": false,
+              "proofHidden": true,
+              "proofUrl": "https://example.com/achievement-proof",
+              "text": "Sample achievement 1 for engagement 5-1."
+            }
+          ],
+          "clientExperience": [
+            {
+              "hidden": false,
+              "text": "Sample responsibility 1 for engagement 5-1."
+            },
+            {
+              "hidden": false,
+              "text": "Sample responsibility 2 for engagement 5-1."
+            },
+            {
+              "hidden": false,
+              "text": "Sample responsibility 3 for engagement 5-1."
+            },
+            {
+              "hidden": false,
+              "text": "Sample responsibility 4 for engagement 5-1."
+            }
+          ],
+          "clientLocation": "Region 1",
+          "clientName": [
+            {
+              "hidden": false,
+              "text": "Client 5-1"
+            }
+          ],
+          "clientType": "Sample Project Engagement",
+          "endDate": "2022-06-30",
+          "hidden": false,
+          "startDate": "2021-12-01"
+        }
+      ],
+      "company": "Company E",
+      "employmentType": "Regular",
+      "endDate": "",
+      "hidden": false,
+      "jobTitle": "Sample Technology Role 5",
+      "officeLocation": "Office Location 5",
+      "sortOrder": 1,
+      "startDate": "2021-11-08",
+      "tech": "Data Entry",
+      "techEndDate": "2022-06-30",
+      "techStartDate": "2021-12-01"
+    },
+    "-P0018vX1mT6_PlVsusZ": {
+      "clientDetails": [
+        {
+          "clientExperience": [
+            {
+              "hidden": false,
+              "text": "Sample responsibility 1 for engagement 6-1."
+            },
+            {
+              "hidden": false,
+              "text": "Sample responsibility 2 for engagement 6-1."
+            },
+            {
+              "hidden": false,
+              "text": "Sample responsibility 3 for engagement 6-1."
+            },
+            {
+              "hidden": false,
+              "text": "Sample responsibility 4 for engagement 6-1."
+            },
+            {
+              "hidden": false,
+              "text": "Sample responsibility 5 for engagement 6-1."
+            }
+          ],
+          "clientLocation": "",
+          "clientType": "",
+          "endDate": "",
+          "hidden": false,
+          "startDate": ""
+        }
+      ],
+      "company": "Company F",
+      "employmentType": "Regular",
+      "endDate": "2021-11-14",
+      "hidden": true,
+      "jobTitle": "Sample Technology Role 6",
+      "officeLocation": "Office Location 6",
+      "sortOrder": 1,
+      "startDate": "2020-03-11",
+      "tech": "Data Entry",
+      "techEndDate": "2021-11-14",
+      "techStartDate": "2020-03-11"
     }
   },
   "Goals": {
-    "g1": {
-      "title": "Continuous Growth",
-      "description": "Develop dependable SAP solutions while continuously expanding technical expertise",
-      "hidden": false
+    "-P03qz7ymWRJCrd3hOdb": {
+      "description": "This is anonymized sample goal description 1.",
+      "hidden": false,
+      "sortOrder": 2,
+      "title": "Sample Professional Goal 1"
+    },
+    "-P03r4ckBLh4mA7avqEt": {
+      "description": "This is anonymized sample goal description 2.",
+      "hidden": false,
+      "sortOrder": 1,
+      "title": "Sample Professional Goal 2"
+    }
+  },
+  "Navigation": {
+    "-P04gOI3oubUh6dqzf1E": {
+      "hidden": false,
+      "href": "#hero",
+      "navbarText": "Home",
+      "quickLinkText": "Home",
+      "section": "hero",
+      "showInNavbar": true,
+      "showInQuickLinks": false,
+      "sortOrder": 1
+    },
+    "-P04gdsTA_-PON1ZtoHj": {
+      "hidden": false,
+      "href": "#about",
+      "navbarText": "About",
+      "quickLinkText": "About",
+      "section": "about",
+      "showInNavbar": true,
+      "showInQuickLinks": false,
+      "sortOrder": 2
+    },
+    "-P04gkSQHN_1MbVFkPrm": {
+      "hidden": false,
+      "href": "#objective",
+      "navbarText": "Objectives",
+      "quickLinkText": "Objectives",
+      "section": "objective",
+      "showInNavbar": true,
+      "showInQuickLinks": false,
+      "sortOrder": 3
+    },
+    "-P04goAC72C6dEXTPrE_": {
+      "hidden": false,
+      "href": "#goal",
+      "navbarText": "Goal",
+      "quickLinkText": "Goal",
+      "section": "goal",
+      "showInNavbar": true,
+      "showInQuickLinks": false,
+      "sortOrder": 4
+    },
+    "-P04gutmWNZwNjNb-YPN": {
+      "hidden": false,
+      "href": "#experience",
+      "navbarText": "Experiences",
+      "quickLinkText": "Experiences",
+      "section": "experience",
+      "showInNavbar": true,
+      "showInQuickLinks": false,
+      "sortOrder": 5
+    },
+    "-P04gzSKO1RrWjQHhLtl": {
+      "hidden": false,
+      "href": "#projects",
+      "navbarText": "Projects",
+      "quickLinkText": "Projects",
+      "section": "projects",
+      "showInNavbar": true,
+      "showInQuickLinks": false,
+      "sortOrder": 6
+    },
+    "-P04h4mUeghylc-jloXB": {
+      "hidden": false,
+      "href": "#certificates",
+      "navbarText": "Certificates",
+      "quickLinkText": "Certificates",
+      "section": "certificates",
+      "showInNavbar": true,
+      "showInQuickLinks": false,
+      "sortOrder": 7
+    },
+    "-P04hF3yvEMootQbih3P": {
+      "hidden": false,
+      "href": "#skills",
+      "navbarText": "Skills",
+      "quickLinkText": "Skills",
+      "section": "skills",
+      "showInNavbar": true,
+      "showInQuickLinks": false,
+      "sortOrder": 8
+    },
+    "-P04hJKKVb0XChlGgP6-": {
+      "hidden": false,
+      "href": "#soft",
+      "navbarText": "Soft Skill",
+      "quickLinkText": "Soft Skill",
+      "section": "soft",
+      "showInNavbar": true,
+      "showInQuickLinks": false,
+      "sortOrder": 9
+    },
+    "-P04hS-wd4AMSDS7bagg": {
+      "hidden": false,
+      "href": "#education",
+      "navbarText": "Education",
+      "quickLinkText": "Education",
+      "section": "education",
+      "showInNavbar": false,
+      "showInQuickLinks": false,
+      "sortOrder": 10
+    },
+    "-P04hVMdjPs4-59y9vjP": {
+      "hidden": false,
+      "href": "#contact",
+      "navbarText": "Contact",
+      "quickLinkText": "Contact",
+      "section": "contact",
+      "showInNavbar": true,
+      "showInQuickLinks": false,
+      "sortOrder": 11
     }
   },
   "Objectives": {
     "o1": {
-      "title": "Deliver Business Value",
-      "description": "Create maintainable solutions that improve efficiency and user experience",
-      "hidden": false
+      "description": "Deliver maintainable solutions that improve efficiency and user experience. Sample objective 1.",
+      "hidden": false,
+      "title": "Sample Objective 1"
     }
   },
-  "Education": {
-    "e1": {
-      "school": "AMA School Fairview",
-      "degree": "Bachelor of Science in Information Technology",
-      "startDate": "2015-06-01",
-      "endDate": "2019-04-01",
-      "location": "Quezon City",
-      "hidden": false
+  "Projects": {
+    "-P047SLk2des9EvtMLck": {
+      "category": "Enterprise Software",
+      "description": "An anonymized sample full-stack business application used for portfolio demonstration 1.",
+      "descriptionLink": "",
+      "featured": true,
+      "features": [
+        "Sample feature 1 for project 1.",
+        "Sample feature 2 for project 1.",
+        "Sample feature 3 for project 1.",
+        "Sample feature 4 for project 1.",
+        "Sample feature 5 for project 1."
+      ],
+      "githubRepositories": [
+        {
+          "label": "Sample Repository 1",
+          "url": "https://github.com/sample-user/sample-project-1-repository-1"
+        },
+        {
+          "label": "Sample Repository 2",
+          "url": "https://github.com/sample-user/sample-project-1-repository-2"
+        }
+      ],
+      "hidden": false,
+      "images": [
+        {
+          "alt": "Sample project image 1",
+          "url": "https://example.com/project-1-image-1.jpg"
+        }
+      ],
+      "notes": "This is dummy project information for testing the project detail page. Record 1.",
+      "platforms": [
+        "BTP"
+      ],
+      "previewImage": "https://example.com/project-preview",
+      "skills": [
+        "ABAP",
+        "RAP",
+        "CDS",
+        "EML",
+        "Fiori List Report Floorplan",
+        "Freestyle SAPUI5"
+      ],
+      "technologies": [
+        "SAP"
+      ],
+      "title": "Sample Enterprise Application 1",
+      "tools": [
+        "Eclipse",
+        "Business Application Studio"
+      ],
+      "youtubeVideos": [
+        {
+          "title": "Sample Project Video 1",
+          "url": "https://example.com/project-1-video-1"
+        }
+      ]
+    }
+  },
+  "SectionSettings": {
+    "about": {
+      "alternateBackground": false,
+      "hidden": false,
+      "sectionId": "",
+      "sortOrder": 3,
+      "title": "About Me"
+    },
+    "certificates": {
+      "alternateBackground": true,
+      "hidden": false,
+      "sectionId": "",
+      "sortOrder": 8,
+      "title": "Certificates"
+    },
+    "contact": {
+      "alternateBackground": false,
+      "hidden": false,
+      "sectionId": "",
+      "sortOrder": 12,
+      "title": "Let's Connect"
+    },
+    "education": {
+      "alternateBackground": true,
+      "hidden": false,
+      "sectionId": "",
+      "sortOrder": 11,
+      "title": "Education"
+    },
+    "experience": {
+      "alternateBackground": true,
+      "hidden": false,
+      "sectionId": "",
+      "sortOrder": 6,
+      "title": "Experiences"
+    },
+    "goal": {
+      "alternateBackground": false,
+      "hidden": true,
+      "sectionId": "",
+      "sortOrder": 5,
+      "title": "Goal"
+    },
+    "hero": {
+      "alternateBackground": false,
+      "hidden": false,
+      "sectionId": "",
+      "sortOrder": 1,
+      "title": "Site Profile"
+    },
+    "objective": {
+      "alternateBackground": false,
+      "hidden": true,
+      "sectionId": "",
+      "sortOrder": 4,
+      "title": "Objectives"
+    },
+    "projects": {
+      "alternateBackground": false,
+      "hidden": false,
+      "sectionId": "",
+      "sortOrder": 7,
+      "title": "Featured Projects"
+    },
+    "skills": {
+      "alternateBackground": false,
+      "hidden": false,
+      "sectionId": "",
+      "sortOrder": 9,
+      "title": "Technical Skills"
+    },
+    "soft": {
+      "alternateBackground": false,
+      "hidden": true,
+      "sectionId": "",
+      "sortOrder": 10,
+      "title": "Soft Skills"
+    },
+    "statistics": {
+      "alternateBackground": false,
+      "hidden": false,
+      "sectionId": "",
+      "sortOrder": 2,
+      "title": "Statistics"
+    }
+  },
+  "SiteProfile": {
+    "-P03tmz1F_qTSbuGNDPO": {
+      "connectDescription": "Open to sample collaboration and technology opportunities.",
+      "connectTitle": "Let's Connect",
+      "contactButtonText": "Contact Me",
+      "contactEmail": "sample.user@example.com",
+      "fullName": "Sample User",
+      "githubButtonText": "GitHub",
+      "githubUrl": "https://github.com/sample-user",
+      "greeting": "Hello, I'm",
+      "heroDescription": "I build reliable enterprise software solutions using modern development tools.",
+      "hidden": false,
+      "jobTitle": "Enterprise Software Developer",
+      "linkedinButtonText": "LinkedIn",
+      "linkedinUrl": "https://www.linkedin.com/in/sample-profile",
+      "profileImage": "https://example.com/sample-profile-image.jpg",
+      "profileImageAlt": "Sample profile image",
+      "profileImageHidden": true,
+      "resumeButtonText": "Download CV",
+      "resumeUrl": "https://example.com/sample-resume.pdf",
+      "showGitHub": true,
+      "showLinkedIn": true
     }
   },
   "Skills": {
+    "ms": {
+      "category": "Microsoft",
+      "hidden": false,
+      "icon": "bi-code-slash",
+      "skills": [
+        "Power BI",
+        "Power Apps",
+        "Power Automate"
+      ],
+      "sortOrder": 2
+    },
     "sap": {
       "category": "SAP",
+      "hidden": false,
+      "icon": "bi-code-slash",
       "skills": [
         "ABAP",
         "RAP",
         "CDS",
         "OData",
+        "Smartform",
+        "SAP Script",
+        "Reports",
+        "BAPI",
+        "BADI",
+        "Customer-Exit",
+        "Implicit Enhancement",
+        "EML",
+        "Annotation",
+        "SAP Fiori",
         "SAPUI5",
-        "CAP",
-        "BTP"
-      ]
-    },
-    "ms": {
-      "category": "Microsoft",
-      "skills": [
-        "Power BI",
-        "Power Apps",
-        "Power Automate"
-      ]
+        "Fiori Floorplans",
+        "SAP CAP",
+        "SAP BTP",
+        "SAP Build Apps",
+        "SAP Build Process Automation",
+        "SAP Joule",
+        "S/4 Hana",
+        "ECC"
+      ],
+      "sortOrder": 1
     },
     "web": {
       "category": "Web Development",
+      "hidden": false,
+      "icon": "bi-code-slash",
       "skills": [
         "HTML",
         "CSS",
         "JavaScript",
-        "Bootstrap"
-      ]
-    },
-    "db": {
-      "category": "Database",
-      "skills": [
-        "Firebase",
-        "SQL"
-      ]
+        "Bootstrap",
+        "Material UI"
+      ],
+      "sortOrder": 3
     }
   },
   "SoftSkills": {
-    "s1": {
-      "title": "Proactive",
-      "description": "Anticipates needs and acts before issues become blockers.",
-      "buttonHidden": false,
-      "examples": [
-        {
-          "text": "Identifies risks early and proposes solutions.",
-          "hidden": false
-        }
-      ]
-    },
-    "s2": {
-      "title": "Collaborative",
-      "description": "Works effectively with technical and business teams.",
-      "buttonHidden": false,
-      "examples": [
-        {
-          "text": "Coordinates with functional consultants and testers.",
-          "hidden": false
-        }
-      ]
-    },
-    "s3": {
-      "title": "Problem Solver",
-      "description": "Analyzes issues systematically and delivers practical fixes.",
-      "buttonHidden": false,
-      "examples": [
-        {
-          "text": "Performs root cause analysis for production incidents.",
-          "hidden": false
-        }
-      ]
-    }
-  },
-  "Experiences": {
-    "x1": {
-      "company": "DXC Technology",
-      "startDate": "2021-11-01",
-      "endDate": "",
-      "jobTitle": "SAP ABAP Developer",
-      "employmentType": "Full-time",
-      "officeLocation": "Taguig / Eton Centris",
-      "tech": "SAP",
-      "clientDetails": [
-        {
-          "clientName": [
-            {
-              "text": "EEC Energy Group Inc.",
-              "hidden": false
-            }
-          ],
-          "clientType": "AM Support",
-          "clientLocation": "Asia",
-          "startDate": "2024-05-01",
-          "endDate": "",
-          "clientExperience": [
-            {
-              "text": "Developed and maintained reports, interfaces, forms, and OData services.",
-              "hidden": false
-            }
-          ],
-          "clientModule": [
-            {
-              "text": "ABAP",
-              "hidden": false
-            },
-            {
-              "text": "RAP",
-              "hidden": false
-            }
-          ],
-          "achievements": [
-            {
-              "text": "Service recognition",
-              "proofUrl": "#",
-              "proofHidden": false,
-              "hidden": false
-            }
-          ]
-        }
-      ],
-      "hidden": false
-    }
-  },
-  "Projects": {
-    "p1": {
-      "title": "SAP Leave Management System",
-      "description": "A SAP Fiori application for employee leave requests.",
-      "featured": true,
+    "-P042wFWWyq-LusldhEF": {
+      "description": "Anonymized example description demonstrating soft skill 1 in a professional setting.",
       "hidden": false,
-      "features": [
-        "Request workflow",
-        "Status tracking"
-      ],
-      "descriptionLink": "#",
-      "githubRepositories": [
-        {
-          "label": "GitHub",
-          "url": "https://github.com/aaronbolival"
-        }
-      ],
-      "previewImage": "",
-      "images": [],
-      "youtube": [],
-      "platform": [
-        "SAP BTP"
-      ],
-      "tools": [
-        "BAS"
-      ],
-      "technologies": [
-        "SAPUI5",
-        "OData"
-      ]
+      "icon": "bi-lightning-charge-fill",
+      "iconHidden": false,
+      "sortOrder": 1,
+      "title": "Sample Soft Skill 1"
     },
-    "p2": {
-      "title": "Material Approval Workflow",
-      "description": "Custom material approval workflow.",
-      "featured": true,
+    "-P0435ixdZdQuH1Vfrf5": {
+      "description": "Anonymized example description demonstrating soft skill 2 in a professional setting.",
       "hidden": false,
-      "technologies": [
-        "ABAP",
-        "RAP"
-      ]
+      "icon": "bi-people-fill",
+      "iconHidden": false,
+      "sortOrder": 2,
+      "title": "Sample Soft Skill 2"
     },
-    "p3": {
-      "title": "Portfolio Website",
-      "description": "Firebase-powered portfolio.",
-      "featured": true,
+    "-P043EhtUn7StCLhnk9T": {
+      "description": "Anonymized example description demonstrating soft skill 3 in a professional setting.",
       "hidden": false,
-      "technologies": [
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ]
-    }
-  },
-  "Certificates": {
-    "c1": {
-      "title": "SAP Back-End Developer - ABAP Cloud",
-      "awardMessage": "SAP certification achievement.",
-      "certType": "SAP",
-      "expiration": "",
-      "featured": true,
+      "icon": "bi-person-hearts",
+      "iconHidden": false,
+      "sortOrder": 3,
+      "title": "Sample Soft Skill 3"
+    },
+    "-P043MgW_6KoMpRmVzIJ": {
+      "description": "Anonymized example description demonstrating soft skill 4 in a professional setting.",
       "hidden": false,
-      "imgLink": "",
-      "issued": "2025-01-01",
-      "issuer": "SAP",
-      "latest": true,
-      "verifyLink": "#"
+      "icon": "bi-chat-dots-fill",
+      "iconHidden": false,
+      "sortOrder": 4,
+      "title": "Sample Soft Skill 4"
     },
-    "c2": {
-      "title": "SAP Fiori Application Developer",
-      "awardMessage": "SAP certification achievement.",
-      "certType": "SAP",
-      "featured": true,
+    "-P043THOX9EXAcJGfEOd": {
+      "description": "Anonymized example description demonstrating soft skill 5 in a professional setting.",
       "hidden": false,
-      "issued": "2024-06-01",
-      "issuer": "SAP",
-      "latest": false,
-      "verifyLink": "#"
+      "icon": "bi-award-fill",
+      "iconHidden": false,
+      "sortOrder": 5,
+      "title": "Sample Soft Skill 5"
     },
-    "c3": {
-      "title": "SAP Build Developer",
-      "awardMessage": "SAP certification achievement.",
-      "certType": "SAP",
-      "featured": true,
+    "-P043aFQr2mKx267WcQA": {
+      "description": "Anonymized example description demonstrating soft skill 6 in a professional setting.",
       "hidden": false,
-      "issued": "2024-02-01",
-      "issuer": "SAP",
-      "latest": false,
-      "verifyLink": "#"
-    }
-  },
-  "Navigation": {
-    "home": {
-      "section": "hero",
-      "navbarText": "Home",
-      "href": "index.html#hero",
-      "showInNavbar": true,
-      "showInQuickLinks": false,
-      "sortOrder": 1
+      "icon": "bi-arrow-repeat",
+      "iconHidden": false,
+      "sortOrder": 6,
+      "title": "Sample Soft Skill 6"
     },
-    "about": {
-      "section": "about",
-      "navbarText": "About",
-      "href": "index.html#about",
-      "showInNavbar": true,
-      "showInQuickLinks": true,
-      "sortOrder": 2
-    },
-    "skills": {
-      "section": "skills",
-      "navbarText": "Skills",
-      "href": "index.html#skills",
-      "showInNavbar": true,
-      "showInQuickLinks": true,
-      "sortOrder": 3
-    },
-    "experience": {
-      "section": "experience",
-      "navbarText": "Experience",
-      "href": "index.html#experience",
-      "showInNavbar": true,
-      "showInQuickLinks": true,
-      "sortOrder": 4
-    }
-  },
-  "SectionSettings": {
-    "hero": {
-      "title": "Site Profile",
+    "-P043gXVD8p9GPsRQwXL": {
+      "description": "Anonymized example description demonstrating soft skill 7 in a professional setting.",
       "hidden": false,
-      "sortOrder": 1
+      "icon": "bi-puzzle-fill",
+      "iconHidden": false,
+      "sortOrder": 7,
+      "title": "Sample Soft Skill 7"
     },
-    "statistics": {
-      "title": "Statistics",
+    "-P043ohC2TIHPGSf5krH": {
+      "description": "Anonymized example description demonstrating soft skill 8 in a professional setting.",
       "hidden": false,
-      "sortOrder": 2
+      "icon": "bi-shield-check",
+      "iconHidden": false,
+      "sortOrder": 8,
+      "title": "Sample Soft Skill 8"
     },
-    "about": {
-      "title": "About Me",
+    "-P043vikFF6MsXwHc2kB": {
+      "description": "Anonymized example description demonstrating soft skill 9 in a professional setting.",
       "hidden": false,
-      "sortOrder": 3
-    },
-    "goal": {
-      "title": "Goal",
-      "hidden": false,
-      "sortOrder": 4
-    },
-    "objective": {
-      "title": "Objective",
-      "hidden": false,
-      "sortOrder": 5
-    },
-    "education": {
-      "title": "Education",
-      "hidden": false,
-      "sortOrder": 6
-    },
-    "skills": {
-      "title": "Technical Skills",
-      "hidden": false,
-      "sortOrder": 7
-    },
-    "soft": {
-      "title": "Soft Skills",
-      "hidden": false,
-      "sortOrder": 8
-    },
-    "experience": {
-      "title": "Experiences",
-      "hidden": false,
-      "sortOrder": 9
-    },
-    "projects": {
-      "title": "Featured Projects",
-      "hidden": false,
-      "sortOrder": 10
-    },
-    "certificates": {
-      "title": "Certificates",
-      "hidden": false,
-      "sortOrder": 11
-    },
-    "contact": {
-      "title": "Let's Connect",
-      "hidden": false,
-      "sortOrder": 12
+      "icon": "bi-person-workspace",
+      "iconHidden": false,
+      "sortOrder": 9,
+      "title": "Sample Soft Skill 9"
     }
   },
   "StatisticsSettings": {
-    "main": {
-      "technologyFocus": "SAP"
+    "-P06g6IaFhW2gYua5ZMH": {
+      "decimalPlaces": "1",
+      "hidden": false,
+      "icon": "bi-code-slash",
+      "sapYearsOverrideEnabled": false,
+      "sapYearsOverrideValue": "",
+      "showNonSapCertificates": true,
+      "showProjectsCount": true,
+      "showSapCertificates": true,
+      "showTechYearsExperience": true,
+      "showTechnologyFocus": true,
+      "showTotalCertificates": true,
+      "showTotalYearsExperience": true,
+      "suffix": "+",
+      "techYearsOverrideEnabled": false,
+      "techYearsOverrideValue": "",
+      "technology": "SAP",
+      "technologyFocus": "SAP",
+      "technologyFocusOverride": "SAP",
+      "title": "SAP Years Experience"
+    }
+  },
+  "WhatIDo": {
+    "-P03qQaH3cZy96h0Z1QG": {
+      "hidden": false,
+      "title": "Sample Service 1"
+    },
+    "-P03qUSYU5LJf0KiLsU0": {
+      "hidden": false,
+      "title": "Sample Service 2"
+    },
+    "-P03rjsU8NTk4iPd0PGT": {
+      "hidden": false,
+      "title": "Sample Service 3"
     }
   }
 }
