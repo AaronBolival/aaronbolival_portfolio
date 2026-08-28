@@ -29,6 +29,7 @@ const C = [
 const SETTINGS_TEMPLATES = {
   Projects: {
     title: "",
+    category: "",
     description: "",
     features: [""],
     descriptionLink: "",
@@ -39,6 +40,8 @@ const SETTINGS_TEMPLATES = {
     platforms: [""],
     tools: [""],
     technologies: [""],
+    notes: "",
+    skills: [""],
     featured: false,
     hidden: false,
   },
@@ -200,6 +203,7 @@ const SETTINGS_TEMPLATES = {
     }
 };
 const ARRAY_ITEM_TEMPLATES = {
+  skills: "",
   clientName: {
     text: "",
     hidden: false
@@ -333,7 +337,15 @@ function field(k, v, path) {
           : /sortorder/i.test(k)
             ? "number"
             : "text",
-    full = /description|message|responsibil/i.test(k);
+    full = /description|message|responsibil|notes/i.test(k) ||
+    (
+      k === "text" &&
+      path.includes("clientExperience") 
+    )||
+    (
+      /^\d+$/.test(k) &&
+      path.includes("description")
+    );
   return `<div class="admin-field ${full ? "full" : ""}"><label for="${id}">${label(k)}</label>${full ? `<textarea id="${id}" class="form-control" data-path="${p.join(".")}">${v ?? ""}</textarea>` : `<input id="${id}" class="form-control" type="${type}" data-path="${p.join(".")}" value="${String(v ?? "").replaceAll('"', "&quot;")}">`}</div>`;
 }
 function arrayField(k, a, p) {

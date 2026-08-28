@@ -868,6 +868,7 @@ function detail(type) {
   let gallery = V(x.images || x.gallery),
     videos = V(x.youtubeVideos || x.youtube || x.videos),
     features = A(x.features),
+    skills = A(x.skills),
     platforms = x.platforms || x.platform,
     tools = x.tools,
     technologies = x.technologies;
@@ -884,17 +885,80 @@ function detail(type) {
   <div class="row g-4 align-items-start">
    <div class="col-lg-6"><div class="project-detail-preview">${mediaThumb(x, "project", "bi-window-stack")}</div></div>
    <div class="col-lg-6">
-    <h3 class="detail-subtitle">Description</h3><p>${E(x.description || "No description provided.")}</p>
+        ${
+      String(x.category || "").trim() !== ""
+        ? `
+          <div class="project-category">
+            <i class="bi bi-grid-fill"></i>
+            ${E(x.category)}
+          </div>
+        `
+        : ""
+    }
+
+    <h3 class="detail-subtitle">Description</h3>
+
+    <p>${E(x.description || "No description provided.")}</p>
     ${x.descriptionLink ? `<p><a href="${E(x.descriptionLink)}" target="_blank" rel="noopener"><i class="bi bi-link-45deg"></i> Open Description Link</a></p>` : ""}
     ${features.length ? `<h3 class="detail-subtitle">Features</h3><ul class="detail-list">${features.map((v) => `<li>${E(v.text || v.title || v.name || v)}</li>`).join("")}</ul>` : ""}
     ${projectRepositories(x) ? `<h3 class="detail-subtitle">Repositories</h3><div>${projectRepositories(x)}</div>` : ""}
    </div>
   </div>
   <div class="detail-info-grid mt-4">
-   <section class="detail-info-card"><h3>Platforms</h3><div>${detailTags(platforms) || '<span class="meta">Not specified</span>'}</div></section>
-   <section class="detail-info-card"><h3>Tools Used</h3><div>${detailTags(tools) || '<span class="meta">Not specified</span>'}</div></section>
-   <section class="detail-info-card"><h3>Technologies</h3><div>${detailTags(technologies) || '<span class="meta">Not specified</span>'}</div></section>
+  ${
+    A(skills).some(
+      (skill) =>
+        String(
+          typeof skill === "object"
+            ? skill.text || skill.title || skill.name || ""
+            : skill,
+        ).trim() !== "",
+    )
+      ? `
+        <section class="detail-info-card">
+          <h3>
+            <i class="bi bi-person-check-fill accent"></i>
+            Skills
+          </h3>
+
+          <div>
+            ${detailTags(skills)}
+          </div>
+        </section>
+      `
+      : ""
+  }  
+   <section class="detail-info-card"><h3><i class="bi bi-window-stack accent"></i>Platforms</h3><div>
+    ${detailTags(platforms) || '<span class="meta">Not specified</span>'}</div></section>
+   <section class="detail-info-card"><h3><i class="bi bi-tools accent"></i>Tools Used</h3><div>
+    ${detailTags(tools) || '<span class="meta">Not specified</span>'}</div></section>
+   <section class="detail-info-card"><h3><i class="bi bi-cpu-fill accent"></i>Technologies</h3><div>
+    ${detailTags(technologies) || '<span class="meta">Not specified</span>'}</div></section>
   </div>
+  ${
+    String(x.notes || "").trim() !== ""
+      ? `
+        <section class="project-notes">
+          <h3>
+            <i class="bi bi-sticky-fill"></i>
+            Notes
+          </h3>
+
+          <p>${E(x.notes)}</p>
+        </section>
+      `
+      : ""
+  }     
+  ${
+    String(x.category || "").trim() !== ""
+      ? `
+        <div class="project-category">
+          <i class="bi bi-grid-fill"></i>
+          ${E(x.category)}
+        </div>
+      `
+      : ""
+  }   
   <h3 class="mt-5"><i class="bi bi-images accent"></i> Gallery</h3><div class="row gallery g-3">${gallery.length ? gallery.map((i) => `<div class="col-md-6 col-xl-4"><a href="${E(i.url || i.src || i.imageUrl)}" target="_blank" rel="noopener"><img src="${E(i.url || i.src || i.imageUrl)}" alt="${E(i.alt || i.title || "Project image")}" loading="lazy"></a>${i.title ? `<small>${E(i.title)}</small>` : ""}</div>`).join("") : '<p class="meta">No gallery images added.</p>'}</div>
   <h3 class="mt-5"><i class="bi bi-youtube text-danger"></i> YouTube Videos</h3><div class="row video g-3">${videos.length ? videos.map((v) => `<div class="col-md-6"><iframe src="${E(youtubeEmbed(v.url || v.videoUrl || v.link))}" title="${E(v.title || "Project video")}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><b class="d-block mt-2">${E(v.title || "Project video")}</b></div>`).join("") : '<p class="meta">No videos added.</p>'}</div>
  </article>`
