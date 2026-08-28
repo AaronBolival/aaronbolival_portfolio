@@ -101,6 +101,78 @@ function mergedYears(rows) {
   });
   return m.reduce((n, x) => n + (x[1] - x[0]) / 31556952000, 0);
 }
+function technologyExperienceYears(technology) {
+  const selectedTechnology = String(
+    technology || "",
+  )
+    .trim()
+    .toUpperCase();
+
+  if (!selectedTechnology) {
+    return 0;
+  }
+
+  const ranges = V(DATA.Experiences)
+    .filter(
+      (experience) =>
+        String(experience.tech || "")
+          .trim()
+          .toUpperCase() === selectedTechnology,
+    )
+    .map((experience) => {
+      const startDate = pd(
+        experience.techStartDate,
+      );
+
+      const endDate = pd(
+        experience.techEndDate,
+        true,
+      );
+
+      return [startDate, endDate];
+    })
+    .filter(
+      ([startDate, endDate]) =>
+        startDate &&
+        endDate &&
+        endDate >= startDate,
+    )
+    .sort(
+      (first, second) =>
+        first[0] - second[0],
+    );
+
+  const mergedRanges = [];
+
+  ranges.forEach(([startDate, endDate]) => {
+    const previousRange =
+      mergedRanges.at(-1);
+
+    if (
+      !previousRange ||
+      startDate > previousRange[1]
+    ) {
+      mergedRanges.push([
+        startDate,
+        endDate,
+      ]);
+
+      return;
+    }
+
+    if (endDate > previousRange[1]) {
+      previousRange[1] = endDate;
+    }
+  });
+
+  const milliseconds = mergedRanges.reduce(
+    (total, [startDate, endDate]) =>
+      total + (endDate - startDate),
+    0,
+  );
+
+  return milliseconds / 31556952000;
+}
 function iconTitle(icon, title) {
   return `<h2 class="section-title"><i class="bi ${icon}"></i>${E(title)}</h2>`;
 }
@@ -217,65 +289,126 @@ function stats() {
   const ex = V(DATA.Experiences);
   const c = V(DATA.Certificates);
   const p = V(DATA.Projects);
-  const s = V(DATA.StatisticsSettings)[0] || {};
 
-  const sapExperiences = ex.filter(
-    (experience) =>
-      String(experience.tech || "")
-        .trim()
-        .toUpperCase() === "SAP",
-  );
+  const s =
+    A(DATA.StatisticsSettings)[0] || {};
 
-  const calculatedSapYears =
-    mergedYears(sapExperiences).toFixed(1);
-
-  const sapYearsValue =
-    s.sapYearsOverrideEnabled === true &&
-    String(s.sapYearsOverrideValue ?? "").trim() !== ""
-      ? String(s.sapYearsOverrideValue).trim()
-      : calculatedSapYears;
-
-  const technologyFocusValue =
-    String(s.technologyFocusOverride || "").trim() ||
-    String(s.technologyFocus || "").trim() ||
+  const selectedTechnology =
+    String(s.technology || "").trim() ||
     "SAP";
 
-  let vals = [
-    [
-      mergedYears(ex).toFixed(1) + "+",
-      "Total Years Experience",
-      "bi-briefcase-fill",
-    ],
-    [
-      sapYearsValue + "+",
-      "SAP Years Experience",
-      "bi-code-slash",
-    ],
-    [p.length, "Projects", "bi-folder-fill"],
-    [
-      c.filter((x) =>
-        /sap/i.test((x.title || "") + (x.issuer || "") + (x.certType || "")),
-      ).length,
-      "SAP Certificates",
-      "bi-patch-check-fill",
-    ],
-    [
-      c.filter(
-        (x) =>
-          !/sap/i.test((x.title || "") + (x.issuer || "") + (x.certType || "")),
-      ).length,
-      "Non-SAP Certificates",
-      "bi-award-fill",
-    ],
-    [c.length, "Total Certificates", "bi-trophy-fill"],
-    [
-      technologyFocusValue,
-      "Technology Focus",
-      "bi-cpu-fill",
-    ]
-  ];
+  const decimalPlaces =
+    Number.isFinite(
+      Number(s.decimalPlaces),
+    )
+      ? Number(s.decimalPlaces)
+      : 1;
+
+  const calculatedTechYears =
+    technologyExperienceYears(
+      selectedTechnology,
+    ).toFixed(decimalPlaces);
+
+  const techYearsValue =
+    s.techYearsOverrideEnabled === true &&
+    String(
+      s.techYearsOverrideValue ?? "",
+    ).trim() !== ""
+      ? String(
+          s.techYearsOverrideValue,
+        ).trim()
+      : calculatedTechYears;
+
+  const techYearsTitle =
+    String(s.title || "").trim() ||
+    `${selectedTechnology} Years Experience`;
+
+  const techYearsIcon =
+    String(s.icon || "").trim() ||
+    "bi-code-slash";
+
+  const techYearsSuffix =
+    s.suffix !== undefined
+      ? String(s.suffix)
+      : "+";
+
+  const technologyFocusValue =
+    String(
+      s.technologyFocusOverride || "",
+    ).trim() ||
+    String(
+      s.technologyFocus || "",
+    ).trim() ||
+    selectedTechnology;
+
+const vals = [
+  [
+    mergedYears(ex).toFixed(1) + "+",
+    "Total Years Experience",
+    "bi-briefcase-fill",
+    s.showTotalYearsExperience !== false,
+  ],
+
+  [
+    techYearsValue + techYearsSuffix,
+    techYearsTitle,
+    techYearsIcon,
+    s.showTechYearsExperience !== false,
+  ],
+
+  [
+    p.length,
+    "Projects",
+    "bi-folder-fill",
+    s.showProjectsCount !== false,
+  ],
+
+  [
+    c.filter(
+      (certificate) =>
+        String(certificate.certType || "")
+          .trim()
+          .toUpperCase()
+          .startsWith("SAP"),
+    ).length,
+    "SAP Certificates",
+    "bi-patch-check-fill",
+    s.showSapCertificates !== false,
+  ],
+
+  [
+    c.filter(
+      (certificate) =>
+        !String(certificate.certType || "")
+          .trim()
+          .toUpperCase()
+          .startsWith("SAP"),
+    ).length,
+    "Non-SAP Certificates",
+    "bi-award-fill",
+    s.showNonSapCertificates !== false,
+  ],
+
+  [
+    c.length,
+    "Total Certificates",
+    "bi-trophy-fill",
+    s.showTotalCertificates !== false,
+  ],
+
+  [
+    technologyFocusValue,
+    "Technology Focus",
+    "bi-cpu-fill",
+    s.showTechnologyFocus !== false,
+  ],
+];
+
   $("#statistics").innerHTML =
-    `<div class="container"><div class="statistics-grid">${vals.map((x) => `<article class="card-ui stat-card"><div class="stat-icon"><i class="bi ${x[2]}"></i></div><div><strong>${x[0]}</strong><span>${x[1]}</span></div></article>`).join("")}</div></div>`;
+    `<div class="container"><div class="statistics-grid">
+      ${vals
+        .filter((x) => x[3] !== false)
+        .map((x) => `<article class="card-ui stat-card"><div class="stat-icon"><i class="bi ${x[2]}"></i></div><div><strong>${x[0]}</strong><span>${x[1]}</span></div></article>`).join("")}</div></div>`;
 }
 function about() {
   let a = V(DATA.AboutMe)[0] || {},

@@ -27,16 +27,31 @@ const C = [
   "StatisticsSettings",
 ];
 const SETTINGS_TEMPLATES = {
-  StatisticsSettings: {
-    technologyFocus: "SAP",
-    technologyFocusOverride: "",
+    StatisticsSettings: {
+      title: "Tech Years Experience",
+      technology: "SAP",
 
-    sapYearsOverrideEnabled: false,
-    sapYearsOverrideValue: "",
+      technologyFocus: "SAP",
+      technologyFocusOverride: "",
 
-    hidden: false
-  },
-  Projects: {
+      techYearsOverrideEnabled: false,
+      techYearsOverrideValue: "",
+
+      icon: "bi-code-slash",
+      suffix: "+",
+      decimalPlaces: 1,
+
+      showTotalYearsExperience: true,
+      showTechYearsExperience: true,
+      showProjectsCount: true,
+      showSapCertificates: true,
+      showNonSapCertificates: true,
+      showTotalCertificates: true,
+      showTechnologyFocus: true,
+
+      hidden: false
+    },
+    Projects: {
     title: "",
     category: "",
     description: "",
@@ -275,7 +290,8 @@ function getArrayPropertyName(path) {
 
 let current = C[0],
   key = "",
-  value = {};
+  value = {},
+  technologyOptions = [];
 const $ = (s) => document.querySelector(s),
   modal = bootstrap.Modal.getOrCreateInstance("#editor");
 onAuthStateChanged(auth, (u) => (u ? init() : (location.href = "login.html")));
@@ -301,6 +317,28 @@ async function load(c) {
   document
     .querySelectorAll(".navbtn")
     .forEach((b) => b.classList.toggle("active", b.dataset.c === c));
+  if (c === "StatisticsSettings") {
+    const experiencesSnapshot = await get(
+      ref(database, "Experiences"),
+    );
+
+    const experiences =
+      experiencesSnapshot.val() || {};
+
+    technologyOptions = [
+      ...new Set(
+        Object.values(experiences)
+          .filter(
+            (experience) =>
+              experience.hidden !== true,
+          )
+          .map((experience) =>
+            String(experience.tech || "").trim(),
+          )
+          .filter(Boolean),
+      ),
+    ].sort((a, b) => a.localeCompare(b));
+  }
   let d = (await get(ref(database, c))).val() || {};
   $("#records").innerHTML =
     Object.entries(d)
@@ -325,10 +363,65 @@ async function load(c) {
 function label(k) {
   return k.replace(/([A-Z])/g, " $1").replace(/^./, (x) => x.toUpperCase());
 }
+function selectField(k, v, path, options) {
+  const selectedValue = String(v || "");
+
+  const availableOptions = [
+    ...new Set(
+      [selectedValue, ...options].filter(Boolean),
+    ),
+  ];
+
+  return `
+    <div class="admin-field">
+      <label>${label(k)}</label>
+
+      <select
+        class="form-select"
+        data-path="${path.join(".")}"
+      >
+        <option value="">Select technology...</option>
+
+        ${availableOptions
+          .map(
+            (option) => `
+              <option
+                value="${option.replaceAll(
+                  '"',
+                  "&quot;",
+                )}"
+                ${
+                  option === selectedValue
+                    ? "selected"
+                    : ""
+                }
+              >
+                ${option}
+              </option>
+            `,
+          )
+          .join("")}
+      </select>
+    </div>
+  `;
+}
 function field(k, v, path) {
   let p = [...path, k],
     id = p.join("__");
-  if (Array.isArray(v)) return arrayField(k, v, p);
+
+  if (
+    current === "StatisticsSettings" &&
+    k === "technology"
+  ) {
+    return selectField(
+      k,
+      v,
+      p,
+      technologyOptions,
+    );
+  }
+
+  if (Array.isArray(v)) return arrayField(k, v, p);  
   if (v && typeof v === "object")
     return `<fieldset class="admin-array"><legend class="h6">${label(k)}</legend>${Object.entries(
       v,
