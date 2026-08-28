@@ -27,6 +27,15 @@ const C = [
   "StatisticsSettings",
 ];
 const SETTINGS_TEMPLATES = {
+  StatisticsSettings: {
+    technologyFocus: "SAP",
+    technologyFocusOverride: "",
+
+    sapYearsOverrideEnabled: false,
+    sapYearsOverrideValue: "",
+
+    hidden: false
+  },
   Projects: {
     title: "",
     category: "",

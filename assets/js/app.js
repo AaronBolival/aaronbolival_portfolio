@@ -213,16 +213,33 @@ function home() {
   connect();
 }
 function stats() {
-  let ex = V(DATA.Experiences),
-    c = V(DATA.Certificates),
-    p = V(DATA.Projects),
-    sap = ex.filter(
-      (x) =>
-        String(x.tech || "")
-          .trim()
-          .toUpperCase() === "SAP",
-    ),
-    s = A(DATA.StatisticsSettings)[0] || {};
+
+  const ex = V(DATA.Experiences);
+  const c = V(DATA.Certificates);
+  const p = V(DATA.Projects);
+  const s = V(DATA.StatisticsSettings)[0] || {};
+
+  const sapExperiences = ex.filter(
+    (experience) =>
+      String(experience.tech || "")
+        .trim()
+        .toUpperCase() === "SAP",
+  );
+
+  const calculatedSapYears =
+    mergedYears(sapExperiences).toFixed(1);
+
+  const sapYearsValue =
+    s.sapYearsOverrideEnabled === true &&
+    String(s.sapYearsOverrideValue ?? "").trim() !== ""
+      ? String(s.sapYearsOverrideValue).trim()
+      : calculatedSapYears;
+
+  const technologyFocusValue =
+    String(s.technologyFocusOverride || "").trim() ||
+    String(s.technologyFocus || "").trim() ||
+    "SAP";
+
   let vals = [
     [
       mergedYears(ex).toFixed(1) + "+",
@@ -230,7 +247,7 @@ function stats() {
       "bi-briefcase-fill",
     ],
     [
-      mergedYears(sap).toFixed(1) + "+",
+      sapYearsValue + "+",
       "SAP Years Experience",
       "bi-code-slash",
     ],
@@ -251,7 +268,11 @@ function stats() {
       "bi-award-fill",
     ],
     [c.length, "Total Certificates", "bi-trophy-fill"],
-    [s.technologyFocus || "SAP", "Technology Focus", "bi-cpu-fill"],
+    [
+      technologyFocusValue,
+      "Technology Focus",
+      "bi-cpu-fill",
+    ]
   ];
   $("#statistics").innerHTML =
     `<div class="container"><div class="statistics-grid">${vals.map((x) => `<article class="card-ui stat-card"><div class="stat-icon"><i class="bi ${x[2]}"></i></div><div><strong>${x[0]}</strong><span>${x[1]}</span></div></article>`).join("")}</div></div>`;
